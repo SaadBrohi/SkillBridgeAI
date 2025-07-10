@@ -74,7 +74,7 @@ POST /predict
 {
   "prediction": "Data Analyst"
 }
-
+```
 ---
 
 ## **Deployment Plan**
@@ -88,6 +88,7 @@ POST /predict
 ---
 
 ## ⚙️** CI/CD Workflow**
+
 GitHub Actions automate:
 
 🔍 Dependency installation
