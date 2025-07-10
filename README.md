@@ -1,85 +1,102 @@
-💼 SkillBridgeAI – AI-Powered Resume Analyzer & Job Recommender
+# 💼 **SkillBridgeAI** – AI-Powered Resume Analyzer & Job Recommender
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Backend CI](https://github.com/Saadbrohi/SkillBridgeAI/actions/workflows/backend.yml/badge.svg)](https://github.com/Saadbrohi/SkillBridgeAI/actions)
+[![Frontend CI](https://github.com/Saadbrohi/SkillBridgeAI/actions/workflows/frontend.yml/badge.svg)](https://github.com/Saadbrohi/SkillBridgeAI/actions)
+
+> **SkillBridgeAI** is a full-stack, ML-integrated web application that helps users identify the most suitable job roles based on their skills or resume content. It uses a trained ML model to offer career guidance and learning recommendations.
+
+---
+
+## 🧠 **What It Does**
+
+🚀 **SkillBridgeAI** intelligently:
+- 🎯 Predicts job roles based on resume or skills
+- 📉 Detects missing skills (gap analysis)
+- 📚 Recommends learning resources
+- 📊 Presents interactive UI via Streamlit
+- 🧠 Integrates a trained ML model with Flask API
+
+---
+
+## 🛠️ **Tech Stack**
+
+| Layer       | Technology                                  |
+|-------------|---------------------------------------------|
+| 🖥️ Frontend  | **Streamlit** (Python-based UI)             |
+| 🔧 Backend   | **Flask** (REST API to serve ML model)      |
+| 🧠 Model     | **scikit-learn**, **joblib**                |
+| 📦 Database  | Coming Soon (SQLite or PostgreSQL)          |
+| 🚀 DevOps    | **GitHub Actions**, CI/CD, Deployment Ready |
+| 🌐 Hosting   | Streamlit Cloud (UI) & Render (Backend API) |
+
+---
 
 
-Live Demo Coming Soon 🚀
+---
 
-🧠 Overview
-SkillBridgeAI is a full-stack AI-powered web app designed to analyze a user's resume or skill input and:
+## 🚀 **Key Features**
 
-🎯 Predict suitable job roles
+✅ Upload resume or enter skills manually  
+✅ ML-powered job prediction API  
+✅ Modular architecture (Flask API + Streamlit UI)  
+✅ Skill gap detection (coming soon)  
+✅ Realtime frontend-backend interaction  
+✅ Docker & deployment ready (coming soon)  
+✅ CI/CD via GitHub Actions  
 
-📉 Detect missing skills through gap analysis
+---
 
-📚 Recommend learning resources
+## 🤖 **Machine Learning Details**
 
-📊 Provide interactive visualizations and predictions
+- **Model:** Random Forest (can be replaced with LLM or custom classifier)
+- **Input:** Resume text or skills list
+- **Output:** Predicted job domain or title
+- **Storage:** `joblib`-serialized `.pkl` file served via Flask
+- **Versioning:** Easy swap with newer model versions via `/ml/model.pkl`
 
-Built for rapid prototyping and educational purposes using a clean Pythonic stack.
+---
 
-🛠️ Tech Stack
-Layer	Technology
-Frontend	Streamlit (Python UI)
-Backend	Flask (REST API for model inference)
-ML Model	scikit-learn / joblib / custom classifiers
-CI/CD	GitHub Actions (auto test & deploy)
-Deployment	Streamlit Cloud (UI), Render (Flask API)
+## 🧪 **API Endpoint**
 
-📸 Features
-✅ Upload resume or enter skills as input
+| Method | Endpoint        | Description           |
+|--------|------------------|------------------------|
+| POST   | `/predict`       | Accepts JSON input and returns predicted job title |
 
-✅ ML-powered job prediction via Flask API
+Example:
 
-✅ Skill gap detection & feedback
+```json
+POST /predict
+{
+  "value": 9
+}
 
-✅ Streamlit-based user dashboard
+{
+  "prediction": "Data Analyst"
+}
 
-✅ Easy model integration (joblib support)
+---
 
-✅ CI/CD via GitHub Actions
+## **Deployment Plan**
 
-✅ Modular folder structure and clean architecture
+| Component     | Platform         |
+| ------------- | ---------------- |
+| Frontend (UI) | Streamlit Cloud  |
+| Backend (API) | FastAPI |
+| CI/CD         | GitHub Actions   |
 
-🤖 Machine Learning Model
-Input: Resume text or skill set (numerical or categorical)
+---
 
-Output: Job role/domain prediction
+## ⚙️** CI/CD Workflow**
+GitHub Actions automate:
 
-Model: Dummy model for now (RandomForest), extendable to LLM or embeddings
+🔍 Dependency installation
 
-Storage: Saved as .pkl via joblib, served via Flask
+✅ Code linting and tests (coming)
 
-🔗 Project Structure
-bash
-Copy
-Edit
-SkillBridgeAI/
-├── flask_api/               # Backend API
-│   ├── ml/                  # Trained model files
-│   ├── routes/              # API routes
-│   └── app.py               # Flask main app
-├── streamlit_ui/            # Streamlit frontend
-│   └── main.py              # UI and API calls
-├── requirements.txt         # Python dependencies
-├── README.md                # Project overview
-├── .gitignore               # Ignore venv, pycache, etc.
-└── .github/workflows/       # CI/CD pipelines
-⚙️ CI/CD Pipelines
-GitHub Actions handle:
+🚀 Auto-deploy to production after push
 
-✅ Dependency install & linting
 
-✅ Unit tests (planned)
 
-✅ Deployment on push (Render + Streamlit Cloud)
-
-🚀 Deployment
-Frontend (Streamlit): Coming Soon
-
-Backend (Flask API): Coming Soon
-
-📄 License
-This project is licensed under the MIT License.
-
-🙌 Acknowledgements
-Inspired by OpenAI, Streamlit, Resume.io, and educational AI platforms.
-Powered by Python’s ML and web stack.
+💬 Built by Saad Brohi — aspiring AI/ML Engineer
+⭐ Star the repo if you like it! Contributions are welcome.
